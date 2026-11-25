@@ -1,6 +1,6 @@
 {
 	"name": "blinky-avatar",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"description": "A drop-in web component that turns any user into a cute, animated avatar.",
 	"license": "MIT",
 	"type": "module",
