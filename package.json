@@ -14,7 +14,7 @@
 		"version-packages": "changeset version",
 		"release": "turbo run build && changeset publish",
 		"size": "turbo run size",
-		"landing": "pnpm --filter landing dev"
+		"landing": "pnpm --filter blinky dev"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.6.8",
