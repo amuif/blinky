@@ -21,15 +21,12 @@ jobs:
         with:
           node-version: 24
           cache: pnpm
-          registry-url: https://registry.npmjs.org
       - run: pnpm install --frozen-lockfile
-      # Opens a "Version packages" PR from pending changesets; merging it publishes to npm.
+      # Opens a "Version packages" PR from pending changesets; merging it publishes to npm
+      # through npm trusted publishing (OIDC, needs id-token: write), so no npm token is stored.
       - uses: changesets/action@v1
         with:
           version: pnpm version-packages
           publish: pnpm release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          # setup-node points pnpm at its own .npmrc, which reads this variable.
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
