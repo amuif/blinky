@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blinky dev</title>
+    <script type="module" src="/src/index.ts"></script>
+    <style>
+      body { font: 14px system-ui; margin: 24px; display: grid; gap: 16px; }
+      .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <blinky-avatar seed="user_8f2a" name="Ibrahim Hassen" size="xs"></blinky-avatar>
+      <blinky-avatar seed="user_8f2a" name="Ibrahim Hassen" size="sm"></blinky-avatar>
+      <blinky-avatar seed="user_8f2a" name="Ibrahim Hassen" size="md"></blinky-avatar>
+      <blinky-avatar seed="user_8f2a" name="Ibrahim Hassen" size="lg"></blinky-avatar>
+      <blinky-avatar seed="user_8f2a" name="Ibrahim Hassen" size="140"></blinky-avatar>
+    </div>
+    <div class="row" id="crowd"></div>
+    <script type="module">
+      const crowd = document.getElementById("crowd");
+      for (let i = 0; i < 40; i++) {
+        crowd.insertAdjacentHTML("beforeend", `<blinky-avatar seed="user_${i}" name="User ${i}"></blinky-avatar>`);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Blinky landing page</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<style>
+body{margin:0;background:#fffaf6}
+a{color:#5a48d8}a:hover{color:#3f2fb8}
+.blink{transform-box:fill-box;transform-origin:center;animation:blink 4.6s infinite}
+.breathe{transform-origin:50% 60%;animation:breathe 3.4s ease-in-out infinite}
+.float1{animation:float 5s ease-in-out infinite}
+.float2{animation:float 6s ease-in-out -2s infinite}
+.float3{animation:float 5.5s ease-in-out -4s infinite}
+@keyframes blink{0%,91%,100%{transform:scaleY(1)}94%{transform:scaleY(.08)}}
+@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.hop{animation:hop 2.4s cubic-bezier(.4,0,.3,1) infinite;transform-origin:50% 100%}
+.sway{animation:sway 4s ease-in-out infinite;transform-origin:50% 90%}
+.doze{animation:doze 5s ease-in-out infinite;transform-origin:50% 90%}
+.zz{animation:zz 2.6s ease-in-out infinite}
+@keyframes hop{0%,55%,100%{transform:translateY(0) scale(1,1)}62%{transform:translateY(0) scale(1.06,.94)}75%{transform:translateY(-18px) scale(.97,1.04)}88%{transform:translateY(0) scale(1.04,.96)}}
+@keyframes sway{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+@keyframes doze{0%,100%{transform:scale(1)}50%{transform:scale(1.025,.985)}}
+@keyframes zz{0%,100%{opacity:.35;transform:translateY(0)}50%{opacity:1;transform:translateY(-6px)}}
+@media (prefers-reduced-motion: reduce){.blink,.breathe,.float1,.float2,.float3,.hop,.sway,.doze,.zz{animation:none}}
+</style>
+</helmet>
+<div style="background: #fffaf6; color: #2b2b3a; font-family: Inter, system-ui, sans-serif; font-size: 17px; line-height: 1.6">
+<svg width="0" height="0" style="position: absolute" aria-hidden="true">
+<symbol id="soft-base" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" style="fill: var(--s, #8fd9b8)"></circle><circle cx="50" cy="47" r="47" style="fill: var(--b, #b8ecd4)"></circle><g style="fill: var(--c, #ff9fb2)" opacity=".7"><ellipse cx="23" cy="62" rx="7" ry="4.5"></ellipse><ellipse cx="77" cy="62" rx="7" ry="4.5"></ellipse></g><path d="M45 62q5 4.5 10 0" fill="none" stroke="#2b2b3a" stroke-width="3.2" stroke-linecap="round"></path></symbol>
+<symbol id="soft-eyes" viewBox="0 0 100 100"><g fill="#2b2b3a"><ellipse cx="35" cy="51" rx="5.5" ry="8"></ellipse><ellipse cx="65" cy="51" rx="5.5" ry="8"></ellipse></g><circle cx="33" cy="48" r="2" fill="#fff"></circle><circle cx="36.8" cy="51.8" r=".9" fill="#fff"></circle><circle cx="63" cy="48" r="2" fill="#fff"></circle><circle cx="66.8" cy="51.8" r=".9" fill="#fff"></circle></symbol>
+<symbol id="bold-base" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" style="fill: var(--b, #2ec4b6)"></circle><g fill="#ffb3c7" opacity=".9"><ellipse cx="18" cy="63" rx="6.5" ry="4"></ellipse><ellipse cx="82" cy="63" rx="6.5" ry="4"></ellipse></g><path d="M42 70l2.5 1q5.5 5.5 11 0l2.5-1" fill="none" stroke="#1f2a2c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
+<symbol id="bold-eyes" viewBox="0 0 100 100"><circle cx="33.5" cy="42" r="16.5" fill="#fff" stroke="#1f2a2c" stroke-width="3.5"></circle><circle cx="66.5" cy="42" r="16.5" fill="#fff" stroke="#1f2a2c" stroke-width="3.5"></circle><circle cx="38" cy="37.5" r="10.5" fill="#1f2a2c"></circle><circle cx="71" cy="37.5" r="10.5" fill="#1f2a2c"></circle><circle cx="34.6" cy="34.1" r="3.2" fill="#fff"></circle><circle cx="67.6" cy="34.1" r="3.2" fill="#fff"></circle><circle cx="41.4" cy="40.7" r="1.4" fill="#fff"></circle><circle cx="74.4" cy="40.7" r="1.4" fill="#fff"></circle></symbol>
+<symbol id="bold-nose" viewBox="0 0 100 100"><circle cx="50" cy="58" r="5.5" fill="#ffd43b" stroke="#1f2a2c" stroke-width="3.2"></circle></symbol>
+<symbol id="blob-base" viewBox="0 0 100 100"><path d="M89.65 44.71C94.56 81.49 92.07 84.74 55.29 89.65C18.51 94.56 15.26 92.07 10.35 55.29C5.44 18.51 7.930 15.26 44.71 10.35C81.49 5.44 84.74 7.93 89.65 44.71Z" style="fill: var(--b, hsl(141 72% 78%))"></path><g fill="#ffb3c7" opacity=".85"><ellipse cx="30.3" cy="61" rx="5" ry="3"></ellipse><ellipse cx="69.7" cy="61" rx="5" ry="3"></ellipse></g></symbol>
+<symbol id="blob-eyes" viewBox="0 0 100 100"><g fill="#1d1b26"><rect x="36.05" y="45.5" width="6.5" height="13" rx="3.25"></rect><rect x="57.45" y="45.5" width="6.5" height="13" rx="3.25"></rect></g><circle cx="38.7" cy="48.5" r="1.4" fill="#fff"></circle><circle cx="60.1" cy="48.5" r="1.4" fill="#fff"></circle></symbol>
+<symbol id="mochi-base" viewBox="0 0 100 100"><ellipse cx="50" cy="88" rx="29" ry="4" fill="#000" opacity=".06"></ellipse><path d="M14.9 70C14.9 44 32.9 28.4 50 28.4S85.1 44 85.1 70C85.1 82 69.1 86 50 86S14.9 82 14.9 70Z" style="fill: var(--b, #efe7f4)" stroke="#0000001a" stroke-width="1"></path><ellipse cx="28.9" cy="40.4" rx="8" ry="4" fill="#fff" opacity=".7" transform="rotate(-20 28.9 40.4)"></ellipse><g fill="#f2a7b6" opacity=".5"><ellipse cx="29" cy="65" rx="5.5" ry="3.2"></ellipse><ellipse cx="71" cy="65" rx="5.5" ry="3.2"></ellipse></g><path d="M45.5 63q2.25 2.5 4.5 0q2.25 2.5 4.5 0" fill="none" stroke="#3a3542" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
+<symbol id="mochi-eyes" viewBox="0 0 100 100"><circle cx="39" cy="57" r="2.8" fill="#3a3542"></circle><circle cx="61" cy="57" r="2.8" fill="#3a3542"></circle><circle cx="37.9" cy="55.9" r="1.06" fill="#fff"></circle><circle cx="59.9" cy="55.9" r="1.06" fill="#fff"></circle></symbol>
+<symbol id="chick-base" viewBox="0 0 100 100"><path d="M47 23q-4-8 2-10M50 23q2-8 8-7M53 24q6-4 10 0" fill="none" stroke="#d9ad3f" stroke-width="2.2" stroke-linecap="round"></path><circle cx="50" cy="56" r="33" style="fill: var(--b, #ffe58a)"></circle><path d="M18 60q-6 6 0 12q4-2 6-6Z M82 60q6 6 0 12q-4-2-6-6Z" style="fill: var(--b, #ffe58a)" stroke="#00000012"></path><g fill="#ffab9e" opacity=".55"><ellipse cx="30.5" cy="59" rx="5.5" ry="3.2"></ellipse><ellipse cx="69.5" cy="59" rx="5.5" ry="3.2"></ellipse></g><path d="M45.5 56L50 60.5L54.5 56Z" fill="#ff9f43" stroke="#ff9f43" stroke-width="1.5" stroke-linejoin="round"></path></symbol>
+<symbol id="chick-eyes" viewBox="0 0 100 100"><circle cx="39.5" cy="50" r="3" fill="#3b2f2a"></circle><circle cx="60.5" cy="50" r="3" fill="#3b2f2a"></circle><circle cx="38.3" cy="48.8" r="1.14" fill="#fff"></circle><circle cx="59.3" cy="48.8" r="1.14" fill="#fff"></circle></symbol>
+<symbol id="jelly-base" viewBox="0 0 100 100"><defs><linearGradient id="g-jelly" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe2b8"></stop><stop offset="1" stop-color="#ffa64d"></stop></linearGradient></defs><ellipse cx="50" cy="88" rx="28" ry="4" fill="#ffa64d" opacity=".25"></ellipse><path d="M50 20C72 20 84 36 84 56S72 86 50 86S16 76 16 56S28 20 50 20Z" fill="url(#g-jelly)" opacity=".92"></path><path d="M30 34C34 27 42 24 50 24" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity=".7"></path><circle cx="66" cy="70" r="3" fill="#fff" opacity=".35"></circle><g fill="#ffffff" opacity=".45"><ellipse cx="29.5" cy="62" rx="5.5" ry="3.2"></ellipse><ellipse cx="70.5" cy="62" rx="5.5" ry="3.2"></ellipse></g><path d="M45 61.5q2.5 2.8 5 0q2.5 2.8 5 0" fill="none" stroke="#3d2d3a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
+<symbol id="jelly-eyes" viewBox="0 0 100 100"><circle cx="39.5" cy="55" r="3.4" fill="#3d2d3a"></circle><circle cx="60.5" cy="55" r="3.4" fill="#3d2d3a"></circle><circle cx="38.1" cy="53.6" r="1.29" fill="#fff"></circle><circle cx="59.1" cy="53.6" r="1.29" fill="#fff"></circle></symbol>
+<symbol id="zz" viewBox="0 0 100 100"><path d="M70 14h9l-9 9h9" fill="none" stroke="#3a3542" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></symbol>
+</svg>
+
+<div style="background: #2b2b3a; color: #fffaf6">
+<header style="max-width: 1200px; margin: 0 auto; padding: 22px 24px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between">
+<a href="#top" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fffaf6"><svg viewBox="0 0 100 100" width="34" height="34" aria-hidden="true" style="--b: #ffd8b8; --s: #f6bb8f; --c: #ff9f6e"><use href="#soft-base"></use><use href="#soft-eyes"></use></svg><span style="font-family: Fredoka, Inter, sans-serif; font-weight: 600; font-size: 24px">Blinky</span></a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 28px; font-size: 16px">
+<a href="#looks" style="color: #d4cfe0; text-decoration: none">Looks</a>
+<a href="#features" style="color: #d4cfe0; text-decoration: none">Features</a>
+<a href="#context" style="color: #d4cfe0; text-decoration: none">Examples</a>
+<span aria-hidden="true" style="width: 1px; height: 22px; background: #4a4960"></span>
+<a href="https://github.com/" style="display: flex; align-items: center; gap: 8px; color: #fffaf6; text-decoration: none"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 18l6-6-6-6"></path><path d="M8 6l-6 6 6 6"></path></svg>GitHub</a>
+</nav>
+</header>
+
+<section id="top" style="max-width: 1200px; margin: 0 auto; padding: 48px 24px 96px; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+<h1 style="margin: 0; font-family: Fredoka, Inter, sans-serif; font-weight: 600; font-size: clamp(2.75rem, 6.4vw, 5rem); line-height: 1; letter-spacing: -0.02em">Every user deserves a face.</h1><p style="margin: 0; flex: 1 1 100%; font-size: 1.2rem; color: #d4cfe0">Blinky turns any name or ID into a cute character that blinks, breathes and naps. One tag, any framework, no images or server.</p><div style="flex: 1 1 380px; min-width: 0; border-radius: 28px; background: #363547; border: 1px solid #4a4960; padding: 28px; display: flex; flex-direction: column; gap: 22px">
+<div style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #c9c0ff">Live preview</span><span style="font-size: 14px; color: #b3aec4">{{ lookName }} · {{ status }}</span></div>
+<div style="position: relative; height: 280px; display: flex; align-items: center; justify-content: center">
+<sc-if value="{{ isOnline }}" hint-placeholder-val="{{ true }}"><div class="hop" style="display: flex"><svg class="breathe" viewBox="0 0 100 100" width="210" height="210" role="img" aria-label="{{ lookName }}, online"><use href="#{{ look }}-base"></use><g class="blink"><use href="#{{ look }}-eyes"></use></g><use href="{{ noseHref }}"></use></svg></div></sc-if>
+<sc-if value="{{ isAway }}" hint-placeholder-val="{{ false }}"><div class="sway" style="display: flex"><svg viewBox="0 0 100 100" width="210" height="210" role="img" aria-label="{{ lookName }}, away"><use href="#{{ look }}-base"></use><g transform="{{ awayT }}"><use href="#{{ look }}-eyes"></use></g><use href="{{ noseHref }}"></use><use class="zz" href="#zz"></use></svg></div></sc-if>
+<sc-if value="{{ isOffline }}" hint-placeholder-val="{{ false }}"><div class="doze" style="display: flex"><svg viewBox="0 0 100 100" width="210" height="210" role="img" aria-label="{{ lookName }}, offline" style="filter: saturate(.35)"><use href="#{{ look }}-base"></use><g transform="{{ offT }}"><use href="#{{ look }}-eyes"></use></g><use href="{{ noseHref }}"></use></svg></div></sc-if>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 14px; color: #b3aec4">Look</span>
+<div role="group" aria-label="Look" style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px">
+<sc-for list="{{ looks }}" as="item" hint-placeholder-count="6">
+<button type="button" aria-pressed="{{ item.pressed }}" aria-label="{{ item.name }}" onClick="{{ item.pick }}" style="aspect-ratio: 1; min-height: 44px; padding: 6px; border-radius: 14px; cursor: pointer; background: #2b2b3a; border: 2px solid {{ item.ring }}; display: grid; place-items: center"><svg viewBox="0 0 100 100" width="100%" height="100%" aria-hidden="true"><use href="#{{ item.id }}-base"></use><use href="#{{ item.id }}-eyes"></use><use href="{{ item.nose }}"></use></svg></button>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 14px; color: #b3aec4">Status</span>
+<div role="group" aria-label="Status" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+<sc-for list="{{ statuses }}" as="item" hint-placeholder-count="3">
+<button type="button" aria-pressed="{{ item.pressed }}" onClick="{{ item.pick }}" style="font: inherit; font-size: 15px; font-weight: 500; min-height: 44px; border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; background: {{ item.bg }}; color: {{ item.fg }}; border: 1px solid #4a4960"><span style="width: 8px; height: 8px; border-radius: 50%; background: {{ item.dot }}"></span>{{ item.label }}</button>
+</sc-for>
+</div>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: stretch">
+<div style="flex: 1 1 600px; max-width: 880px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<div role="group" aria-label="Package manager" style="align-self: flex-start; display: inline-flex; flex-wrap: wrap; gap: 4px; padding: 5px; border-radius: 999px; background: #232230; border: 1px solid #45445a">
+<sc-for list="{{ pms }}" as="item" hint-placeholder-count="4">
+<button type="button" aria-pressed="{{ item.pressed }}" onClick="{{ item.pick }}" style="font: inherit; font-size: 17px; font-weight: 500; min-height: 44px; padding: 8px 22px; border: 0; border-radius: 999px; cursor: pointer; background: {{ item.bg }}; color: {{ item.fg }}">{{ item.label }}</button>
+</sc-for>
+</div>
+
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 10px 10px 24px; border-radius: 18px; background: #232230; border: 1px solid #45445a">
+<code style="font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 19px; white-space: nowrap; overflow-x: auto"><span style="color: #8e89a3">$ </span>{{ cmd }}</code>
+<button type="button" aria-label="Copy install command" onClick="{{ copyCmd }}" style="flex-shrink: 0; width: 44px; height: 44px; border: 0; border-radius: 12px; background: transparent; color: #d4cfe0; display: grid; place-items: center; cursor: pointer">
+<sc-if value="{{ cmdCopied }}" hint-placeholder-val="{{ false }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8fe3b4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg></sc-if>
+<sc-if value="{{ cmdIdle }}" hint-placeholder-val="{{ true }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15V6a2 2 0 0 1 2-2h9"></path></svg></sc-if>
+</button>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin-top: 8px">
+<span style="font-size: 16px; color: #b3aec4">your config</span>
+<div style="display: flex; align-items: center; gap: 18px">
+<label style="position: relative; display: flex; align-items: center; color: #d4cfe0; font-size: 16px"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Framework</span><select value="{{ fw }}" onChange="{{ pickFw }}" style="appearance: none; font: inherit; font-size: 16px; color: #d4cfe0; background: transparent; border: 0; padding: 8px 26px 8px 4px; min-height: 40px; cursor: pointer"><option value="react">react</option><option value="svelte">svelte</option><option value="html">html</option></select><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="position: absolute; right: 4px; pointer-events: none"><path d="M6 9l6 6 6-6"></path></svg></label>
+<span style="font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 15px; color: #b3aec4">{{ file }}</span>
+</div>
+</div>
+
+<div style="position: relative; border-radius: 22px; background: #232230; border: 1px solid #45445a; padding: 28px 32px">
+<button type="button" aria-label="Copy code" onClick="{{ copyCode }}" style="position: absolute; top: 18px; right: 18px; width: 44px; height: 44px; border: 0; border-radius: 12px; background: transparent; color: #d4cfe0; display: grid; place-items: center; cursor: pointer">
+<sc-if value="{{ codeCopied }}" hint-placeholder-val="{{ false }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8fe3b4" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg></sc-if>
+<sc-if value="{{ codeIdle }}" hint-placeholder-val="{{ true }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15V6a2 2 0 0 1 2-2h9"></path></svg></sc-if>
+</button>
+<sc-if value="{{ isHtml }}" hint-placeholder-val="{{ false }}">
+<pre style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 17px; line-height: 1.8; color: #fffaf6; overflow-x: auto"><span style="color: #b9b0ff">&lt;script</span> <span style="color: #b3aec4">type</span>=<span style="color: #a8e6c4">"module"</span> <span style="color: #b3aec4">src</span>=<span style="color: #a8e6c4">"https://unpkg.com/blinky-avatar"</span><span style="color: #b9b0ff">&gt;&lt;/script&gt;</span>
+
+&lt;blinky-avatar
+  <span style="color: #b3aec4">name</span>=<span style="color: #a8e6c4">"John Doe"</span>
+  <span style="color: #b3aec4">look</span>=<span style="color: #a8e6c4">"{{ look }}"</span>
+  <span style="color: #b3aec4">status</span>=<span style="color: #a8e6c4">"{{ status }}"</span>
+&gt;&lt;/blinky-avatar&gt;</pre>
+</sc-if>
+<sc-if value="{{ isReact }}" hint-placeholder-val="{{ true }}">
+<pre style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 17px; line-height: 1.8; color: #fffaf6; overflow-x: auto"><span style="color: #b9b0ff">import</span> { Blinky } <span style="color: #b9b0ff">from</span> <span style="color: #a8e6c4">"blinky-avatar/react"</span>;
+
+&lt;<span style="color: #c9c0ff">Blinky</span>
+  <span style="color: #b3aec4">name</span>=<span style="color: #a8e6c4">"John Doe"</span>
+  <span style="color: #b3aec4">look</span>=<span style="color: #a8e6c4">"{{ look }}"</span>
+  <span style="color: #b3aec4">status</span>=<span style="color: #a8e6c4">"{{ status }}"</span>
+/&gt;</pre>
+</sc-if>
+<sc-if value="{{ isSvelte }}" hint-placeholder-val="{{ false }}">
+<pre style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 17px; line-height: 1.8; color: #fffaf6; overflow-x: auto"><span style="color: #b9b0ff">&lt;script&gt;</span>
+  <span style="color: #b9b0ff">import</span> { Blinky } <span style="color: #b9b0ff">from</span> <span style="color: #a8e6c4">"blinky-avatar/svelte"</span>;
+<span style="color: #b9b0ff">&lt;/script&gt;</span>
+
+&lt;<span style="color: #c9c0ff">Blinky</span>
+  <span style="color: #b3aec4">name</span>=<span style="color: #a8e6c4">"John Doe"</span>
+  <span style="color: #b3aec4">look</span>=<span style="color: #a8e6c4">"{{ look }}"</span>
+  <span style="color: #b3aec4">status</span>=<span style="color: #a8e6c4">"{{ status }}"</span>
+/&gt;</pre>
+</sc-if>
+</div>
+
+<p style="margin: 0; font-size: 16px; color: #b3aec4">Every attribute is optional except the name. Leave out <code style="font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; color: #d4cfe0">status</code> and it stays online.</p>
+<a href="#looks" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: #d4cfe0; text-decoration: none; font-size: 16px">Browse every look<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg></a>
+</div>
+
+</div>
+</div>
+</section>
+</div>
+
+<section id="looks" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 36px">
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: flex-end"><div style="display: flex; flex-direction: column; gap: 8px"><p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #5a48d8">Looks</p><h2 style="margin: 0; font-family: Fredoka, Inter, sans-serif; font-weight: 600; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1">Six looks, one tag</h2></div><p style="margin: 0; max-width: 440px; color: #5f5a6b">Pick a look for your whole product. The name picks the colours and the face, so nobody looks the same.</p></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 16px">
+<article style="padding: 24px 16px; border-radius: 24px; background: #ffffff; border: 1px solid #efe6df; display: flex; flex-direction: column; align-items: center; gap: 12px"><svg class="float1" viewBox="0 0 100 100" width="96" height="96" role="img" aria-label="Soft"><use href="#soft-base"></use><use href="#soft-eyes"></use></svg><h3 style="margin: 0; font-family: Fredoka, Inter, sans-serif; font-weight: 600; font-size: 22px">Soft</h3><code style="font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 13px; color: #5a48d8">look="soft"</code></article>
+<article style="padding: 24px 16px; border-radius: 24px; background: #ffffff; border: 1px solid #efe6df; display: flex; flex-direction: column; align-items: center; gap: 12px"><svg class="float2" viewBox="0 0 100 100" width="96" height="96" role="img" aria-label="Bold"><use href="#bold-base"></use><use href="#bold-eyes"></use><use href="#bold-nose"></use></svg><h3 style="margin: 0; font-family: Fredoka, Inter, sans-serif; font-weight: 600; font-size: 22px">Bold</h3><code style="font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 13px; color: #5a48d8">look="bold"</code></article>
+<article style="padding: 24px 16px; border-radius: 24px; background: #ffffff; border: 1px solid #efe6df; display: flex; flex-direction: column; align-items: center; gap: 12px"><svg class="float3" viewBox="0 0 100 100" width="96" height="96" role="img" aria-label="Blob"><use href="#blob-base"></use><use href="#blob-eyes"></use></svg><h3 style="margin: 0; font-family: Fredoka, Inter, sans-serif; font-weight: 600; font-size: 22px">Blob</h3><code style="font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 13px; color: #5a48d8">look="blob"</code></article>
+<article style="padding: 24px 16px; border-radius: 24px; background: #ffffff; border: 1px solid #efe6df; display: flex; flex-direction: column; align-items: center; gap: 12px"><svg class="float2" viewBox="0 0 100 100" width="96" height="96" role="img" aria-label="Mochi"><use href="#mochi-base"></use><use href="#mochi-eyes"></use></svg><h3 style="margin: 0; font-family: Fredoka, Inter, sans-serif; font-weight: 600; font-size: 22px">Mochi</h3><code style="font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 13px; color: #5a48d8">look="mochi"</code></article>
+<article style="padding: 24px 16px; border-radius: 24px; background: #ffffff; border: 1px solid #efe6df; display: flex; flex-direction: column; align-items: center; gap: 12px"><svg class="float1" viewBox="0 0 100 100" width="96" height="96" role="img" aria-label="Chick"><use href="#chick-base"></use><use href="#chick-eyes"></use></svg><h3 style="margin: 0; font-family: Fredoka, Inter, sans-serif; font-weight: 600; font-size: 22px">Chick</h3><code style="font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 13px; color: #5a48d8">look="chick"</code></article>
+<article style="padding: 24px 16px; border-radius: 24px; background: #ffffff; border: 1px solid #efe6df; display: flex; flex-direction: column; align-items: center; gap: 12px"><svg class="float3" viewBox="0 0 100 100" width="96" height="96" role="img" aria-label="Jelly"><use href="#jelly-base"></use><use href="#jelly-eyes"></use></svg><h3 style="margin: 0; font-family: Fredoka, Inter, sans-serif; font-weight: 600; font-size: 22px">Jelly</h3><code style="font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 13px; color: #5a48d8">look="jelly"</code></article>
+</div>
+</section>
+
+<section id="features" style="background: #ffffff; border-top: 1px solid #efe6df; border-bottom: 1px solid #efe6df">
+<div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 36px">
+<div style="display: flex; flex-direction: column; gap: 8px"><p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #5a48d8">Why Blinky</p><h2 style="margin: 0; font-family: Fredoka, Inter, sans-serif; font-weight: 600; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1">Small tag, lots of life</h2></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px">
+<article style="padding: 28px; border-radius: 24px; background: #fffaf6; border: 1px solid #efe6df; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; gap: 10px; height: 64px"><svg viewBox="0 0 100 100" width="56" height="56" aria-hidden="true" style="--b: #bfdcff; --s: #97c2f5; --c: #ff9fc0"><use href="#soft-base"></use><use href="#soft-eyes"></use></svg><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8e89a3" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 9h14M5 15h14"></path></svg><svg viewBox="0 0 100 100" width="56" height="56" aria-hidden="true" style="--b: #bfdcff; --s: #97c2f5; --c: #ff9fc0"><use href="#soft-base"></use><use href="#soft-eyes"></use></svg></div>
+<h3 style="margin: 0; font-family: Fredoka, Inter, sans-serif; font-weight: 600; font-size: 22px">Same name, same face</h3>
+<p style="margin: 0; font-size: 16px; color: #5f5a6b">Faces come from a seed, so a user looks the same on every page, device and visit.</p>
+</article>
+<article style="padding: 28px; border-radius: 24px; background: #fffaf6; border: 1px solid #efe6df; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; gap: 6px; height: 64px"><svg viewBox="0 0 100 100" width="52" height="52" role="img" aria-label="Online"><use href="#soft-base"></use><g class="blink"><use href="#soft-eyes"></use></g></svg><svg viewBox="0 0 100 100" width="52" height="52" role="img" aria-label="Away"><use href="#soft-base"></use><g transform="translate(0 52) scale(1 .45) translate(0 -52)"><use href="#soft-eyes"></use></g><use href="#zz"></use></svg><svg viewBox="0 0 100 100" width="52" height="52" role="img" aria-label="Offline" style="filter: saturate(.35)"><use href="#soft-base"></use><g transform="translate(0 52) scale(1 .12) translate(0 -52)"><use href="#soft-eyes"></use></g></svg></div>
+<h3 style="margin: 0; font-family: Fredoka, Inter, sans-serif; font-weight: 600; font-size: 22px">Alive, not static</h3>
+<p style="margin: 0; font-size: 16px; color: #5f5a6b">Online blinks and breathes, away gets sleepy, offline closes its eyes. Presence you can see.</p>
+</article>
+<article style="padding: 28px; border-radius: 24px; background: #fffaf6; border: 1px solid #efe6df; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px; height: 64px"><span style="padding: 4px 10px; border-radius: 8px; background: #ece8ff; font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 13px; color: #3d3470">html</span><span style="padding: 4px 10px; border-radius: 8px; background: #ece8ff; font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 13px; color: #3d3470">react</span><span style="padding: 4px 10px; border-radius: 8px; background: #ece8ff; font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 13px; color: #3d3470">vue</span><span style="padding: 4px 10px; border-radius: 8px; background: #ece8ff; font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 13px; color: #3d3470">svelte</span></div>
+<h3 style="margin: 0; font-family: Fredoka, Inter, sans-serif; font-weight: 600; font-size: 22px">Any framework</h3>
+<p style="margin: 0; font-size: 16px; color: #5f5a6b">It is a standard web component. If your stack renders HTML, it renders Blinky.</p>
+</article>
+<article style="padding: 28px; border-radius: 24px; background: #fffaf6; border: 1px solid #efe6df; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; height: 64px"><span style="display: grid; place-items: center; width: 56px; height: 56px; border-radius: 16px; background: #ece8ff; color: #5a48d8"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7l8-4 8 4-8 4z"></path><path d="M4 12l8 4 8-4"></path><path d="M4 17l8 4 8-4"></path></svg></span></div>
+<h3 style="margin: 0; font-family: Fredoka, Inter, sans-serif; font-weight: 600; font-size: 22px">Nothing to host</h3>
+<p style="margin: 0; font-size: 16px; color: #5f5a6b">Drawn as SVG in the browser. No image uploads, no CDN of faces, no server calls.</p>
+</article>
+</div>
+</div>
+</section>
+
+<section id="context" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; gap: 36px">
+<div style="display: flex; flex-direction: column; gap: 8px"><p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #5a48d8">Examples</p><h2 style="margin: 0; font-family: Fredoka, Inter, sans-serif; font-weight: 600; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1">Drop it anywhere a person shows up</h2></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+<div style="padding: 24px; border-radius: 24px; background: #ffffff; border: 1px solid #efe6df; display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 14px; font-weight: 600; color: #5f5a6b">Who's here</span>
+<div style="display: flex; align-items: center"><svg viewBox="0 0 100 100" width="48" height="48" aria-hidden="true" style="--b: #bfdcff; --s: #97c2f5; --c: #ff9fc0"><use href="#soft-base"></use><use href="#soft-eyes"></use></svg><svg viewBox="0 0 100 100" width="48" height="48" aria-hidden="true" style="margin-left: -14px; --b: #f3c4f0; --s: #e2a0dd; --c: #ff8fbf"><use href="#soft-base"></use><use href="#soft-eyes"></use></svg><svg viewBox="0 0 100 100" width="48" height="48" aria-hidden="true" style="margin-left: -14px; --b: #e8dccb; --s: #d4c3aa; --c: #ff9f9f"><use href="#soft-base"></use><use href="#soft-eyes"></use></svg><svg viewBox="0 0 100 100" width="48" height="48" aria-hidden="true" style="margin-left: -14px; --b: #d9f2b0; --s: #b9df86; --c: #ff9e9e"><use href="#soft-base"></use><use href="#soft-eyes"></use></svg><span style="margin-left: -14px; width: 48px; height: 48px; border-radius: 50%; background: #ece8ff; border: 2px solid #ffffff; display: grid; place-items: center; font-size: 14px; font-weight: 600; color: #3d3470">+3</span></div>
+<p style="margin: 0; font-size: 15px; color: #5f5a6b">Avatar stacks on docs, boards and dashboards.</p>
+</div>
+<div style="padding: 24px; border-radius: 24px; background: #ffffff; border: 1px solid #efe6df; display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 14px; font-weight: 600; color: #5f5a6b">Comments</span>
+<div style="display: flex; gap: 10px; align-items: flex-start"><svg viewBox="0 0 100 100" width="36" height="36" aria-hidden="true" style="flex-shrink: 0; --b: #ffeaa0"><use href="#chick-base"></use><use href="#chick-eyes"></use></svg><div style="display: flex; flex-direction: column; gap: 2px; font-size: 15px"><b>Lena</b><span style="color: #5f5a6b">The onboarding screens are up for review.</span></div></div>
+<div style="display: flex; gap: 10px; align-items: flex-start"><svg viewBox="0 0 100 100" width="36" height="36" aria-hidden="true" style="flex-shrink: 0; --b: #e3edf7"><use href="#chick-base"></use><use href="#chick-eyes"></use></svg><div style="display: flex; flex-direction: column; gap: 2px; font-size: 15px"><b>Arjun</b><span style="color: #5f5a6b">Lovely. One note on the card spacing.</span></div></div>
+</div>
+<div style="padding: 24px; border-radius: 24px; background: #ffffff; border: 1px solid #efe6df; display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 14px; font-weight: 600; color: #5f5a6b">Team list</span>
+<div style="display: flex; align-items: center; gap: 12px; font-size: 15px"><svg viewBox="0 0 100 100" width="36" height="36" role="img" aria-label="Sofia, online"><use href="#mochi-base"></use><use href="#mochi-eyes"></use></svg><span style="flex: 1">Sofia Martínez</span><span style="color: #2f7a52; font-size: 13px; font-weight: 600">Online</span></div>
+<div style="display: flex; align-items: center; gap: 12px; font-size: 15px"><svg viewBox="0 0 100 100" width="36" height="36" role="img" aria-label="Kenji, away" style="--b: #e6eef6"><use href="#mochi-base"></use><g transform="translate(0 57) scale(1 .45) translate(0 -57)"><use href="#mochi-eyes"></use></g><use href="#zz"></use></svg><span style="flex: 1">Kenji Tanaka</span><span style="color: #9a5b12; font-size: 13px; font-weight: 600">Away</span></div>
+<div style="display: flex; align-items: center; gap: 12px; font-size: 15px"><svg viewBox="0 0 100 100" width="36" height="36" role="img" aria-label="Amara, offline" style="filter: saturate(.35); --b: #f9dfe4"><use href="#mochi-base"></use><g transform="translate(0 57) scale(1 .12) translate(0 -57)"><use href="#mochi-eyes"></use></g></svg><span style="flex: 1; color: #5f5a6b">Amara Okafor</span><span style="color: #6b6878; font-size: 13px; font-weight: 600">Offline</span></div>
+</div>
+</div>
+</section>
+
+<section style="padding: 0 24px 96px">
+<div style="max-width: 1200px; margin: 0 auto; border-radius: 32px; background: #5a48d8; color: #ffffff; padding: 56px 40px; display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: space-between">
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-family: Fredoka, Inter, sans-serif; font-weight: 600; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1">Give your users a face</h2>
+<p style="margin: 0; font-size: 18px; color: #ece8ff">Install it, add one tag, ship it today.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center">
+<div style="display: flex; align-items: center; gap: 4px; padding: 4px 4px 4px 20px; border-radius: 999px; background: #4a39c4; color: #ffffff"><code style="font-family: 'JetBrains Mono', ui-monospace, Menlo, monospace; font-size: 16px; white-space: nowrap">$ {{ cmd }}</code><button type="button" aria-label="Copy install command" onClick="{{ copyCta }}" style="flex-shrink: 0; width: 44px; height: 44px; border: 0; border-radius: 999px; background: transparent; color: #ffffff; display: grid; place-items: center; cursor: pointer"><sc-if value="{{ ctaCopied }}" hint-placeholder-val="{{ false }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c8f5dc" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg></sc-if><sc-if value="{{ ctaIdle }}" hint-placeholder-val="{{ true }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15V6a2 2 0 0 1 2-2h9"></path></svg></sc-if></button></div>
+<a href="#top" style="display: inline-flex; align-items: center; min-height: 44px; padding: 12px 26px; border-radius: 999px; background: #fffaf6; color: #2b2b3a; font-weight: 600; text-decoration: none">Get started</a>
+</div>
+</div>
+</section>
+
+<footer style="border-top: 1px solid #efe6df; padding: 28px 24px 40px">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; font-size: 14px; color: #5f5a6b">
+<span style="display: flex; align-items: center; gap: 8px"><svg viewBox="0 0 100 100" width="24" height="24" aria-hidden="true" style="--b: #ffd8b8; --s: #f6bb8f; --c: #ff9f6e"><use href="#soft-base"></use><use href="#soft-eyes"></use></svg> Blinky · MIT licensed</span>
+<span>Made with soft shapes and big eyes</span>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3500}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { pm: 'bun', fw: 'react', look: 'soft', status: 'online', copied: '' };
+  }
+  copy(text, key) {
+    try { navigator.clipboard && navigator.clipboard.writeText(text).catch(function () {}); } catch (e) {}
+    this.setState({ copied: key });
+    clearTimeout(this._t);
+    this._t = setTimeout(() => this.setState({ copied: '' }), 1400);
+  }
+  componentWillUnmount() { clearTimeout(this._t); }
+  renderVals() {
+    const s = this.state;
+    const cmds = { bun: 'bun add blinky-avatar', npm: 'npm i blinky-avatar', pnpm: 'pnpm add blinky-avatar', yarn: 'yarn add blinky-avatar' };
+    const files = { react: 'Avatar.tsx', svelte: 'Avatar.svelte', html: 'index.html' };
+    const lookList = [
+      { id: 'soft', name: 'Soft', y: 52 }, { id: 'bold', name: 'Bold', y: 42 }, { id: 'blob', name: 'Blob', y: 52 },
+      { id: 'mochi', name: 'Mochi', y: 57 }, { id: 'chick', name: 'Chick', y: 50 }, { id: 'jelly', name: 'Jelly', y: 55 }
+    ];
+    const cur = lookList.find((l) => l.id === s.look) || lookList[0];
+    const eyeT = (k) => 'translate(0 ' + cur.y + ') scale(1 ' + k + ') translate(0 -' + cur.y + ')';
+    const statusColors = { online: '#8fe3b4', away: '#ffc56b', offline: '#8e89a3' };
+    const codeFor = {
+      html: '<script type="module" src="https://unpkg.com/blinky-avatar"><\/script>\n\n<blinky-avatar\n  name="John Doe"\n  look="' + s.look + '"\n  status="' + s.status + '"\n></blinky-avatar>',
+      react: 'import { Blinky } from "blinky-avatar/react";\n\n<Blinky\n  name="John Doe"\n  look="' + s.look + '"\n  status="' + s.status + '"\n/>',
+      svelte: '<script>\n  import { Blinky } from "blinky-avatar/svelte";\n<\/script>\n\n<Blinky\n  name="John Doe"\n  look="' + s.look + '"\n  status="' + s.status + '"\n/>'
+    };
+    return {
+      cmd: cmds[s.pm],
+      file: files[s.fw],
+      fw: s.fw,
+      look: s.look,
+      lookName: cur.name,
+      status: s.status,
+      isHtml: s.fw === 'html', isReact: s.fw === 'react', isSvelte: s.fw === 'svelte',
+      isOnline: s.status === 'online', isAway: s.status === 'away', isOffline: s.status === 'offline',
+      awayT: eyeT(0.45), offT: eyeT(0.12),
+      noseHref: s.look === 'bold' ? '#bold-nose' : '',
+      cmdCopied: s.copied === 'cmd', cmdIdle: s.copied !== 'cmd',
+      codeCopied: s.copied === 'code', codeIdle: s.copied !== 'code',
+      ctaCopied: s.copied === 'cta', ctaIdle: s.copied !== 'cta',
+      copyCta: () => this.copy(cmds[s.pm], 'cta'),
+      copyCmd: () => this.copy(cmds[s.pm], 'cmd'),
+      copyCode: () => this.copy(codeFor[s.fw], 'code'),
+      pickFw: (e) => this.setState({ fw: e.target.value }),
+      pms: ['bun', 'npm', 'pnpm', 'yarn'].map((p) => ({
+        label: p,
+        pressed: String(s.pm === p),
+        bg: s.pm === p ? '#fffaf6' : 'transparent',
+        fg: s.pm === p ? '#2b2b3a' : '#b3aec4',
+        pick: () => this.setState({ pm: p })
+      })),
+      looks: lookList.map((l) => ({
+        id: l.id, name: l.name,
+        nose: l.id === 'bold' ? '#bold-nose' : '',
+        pressed: String(s.look === l.id),
+        ring: s.look === l.id ? '#c9c0ff' : 'transparent',
+        pick: () => this.setState({ look: l.id })
+      })),
+      statuses: ['online', 'away', 'offline'].map((st) => ({
+        label: st[0].toUpperCase() + st.slice(1),
+        pressed: String(s.status === st),
+        dot: statusColors[st],
+        bg: s.status === st ? '#fffaf6' : '#2b2b3a',
+        fg: s.status === st ? '#2b2b3a' : '#d4cfe0',
+        pick: () => this.setState({ status: st })
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

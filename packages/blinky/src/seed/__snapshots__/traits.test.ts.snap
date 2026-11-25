@@ -1,0 +1,249 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`determinism > trait set v1 is frozen > blob 1`] = `
+[
+  {
+    "eyeGap": 11.5,
+    "eyeTilt": 6.9,
+    "hue": 182,
+    "look": "blob",
+    "radii": [
+      38.5,
+      43.7,
+      45,
+      43,
+      41.2,
+      38.5,
+      45.2,
+    ],
+    "shape": "capsule",
+    "tilt": -9.6,
+  },
+  {
+    "eyeGap": 10.7,
+    "eyeTilt": 0.6,
+    "hue": 141,
+    "look": "blob",
+    "radii": [
+      43.1,
+      41.9,
+      38.3,
+      41.3,
+      44.6,
+      38.3,
+      43.6,
+    ],
+    "shape": "squircle",
+    "tilt": -7.6,
+  },
+  {
+    "eyeGap": 8.7,
+    "eyeTilt": -1.4,
+    "hue": 117,
+    "look": "blob",
+    "radii": [
+      44,
+      45.5,
+      40.7,
+      42.2,
+      45.8,
+      44.5,
+      42.6,
+    ],
+    "shape": "organic",
+    "tilt": 9.5,
+  },
+  {
+    "eyeGap": 8.7,
+    "eyeTilt": 4.8,
+    "hue": 226,
+    "look": "blob",
+    "radii": [
+      44.3,
+      44.6,
+      45.8,
+      43.5,
+      38.9,
+      42.5,
+      45.7,
+    ],
+    "shape": "squircle",
+    "tilt": 1.7,
+  },
+]
+`;
+
+exports[`determinism > trait set v1 is frozen > bold 1`] = `
+[
+  {
+    "eyes": "up",
+    "look": "bold",
+    "mouth": "smile",
+    "nose": true,
+    "palette": 6,
+  },
+  {
+    "eyes": "up-right",
+    "look": "bold",
+    "mouth": "smile",
+    "nose": true,
+    "palette": 4,
+  },
+  {
+    "eyes": "front",
+    "look": "bold",
+    "mouth": "small",
+    "nose": false,
+    "palette": 3,
+  },
+  {
+    "eyes": "up-right",
+    "look": "bold",
+    "mouth": "cat",
+    "nose": false,
+    "palette": 7,
+  },
+]
+`;
+
+exports[`determinism > trait set v1 is frozen > chick 1`] = `
+[
+  {
+    "color": 4,
+    "eyeGap": 10.2,
+    "eyes": "happy",
+    "look": "chick",
+    "tuft": "curl",
+  },
+  {
+    "color": 3,
+    "eyeGap": 10.5,
+    "eyes": "dots",
+    "look": "chick",
+    "tuft": "sprout",
+  },
+  {
+    "color": 2,
+    "eyeGap": 12.2,
+    "eyes": "happy",
+    "look": "chick",
+    "tuft": "trio",
+  },
+  {
+    "color": 5,
+    "eyeGap": 11.4,
+    "eyes": "dots",
+    "look": "chick",
+    "tuft": "trio",
+  },
+]
+`;
+
+exports[`determinism > trait set v1 is frozen > jelly 1`] = `
+[
+  {
+    "color": 4,
+    "eyeGap": 10.2,
+    "eyes": "happy",
+    "look": "jelly",
+    "mouth": "smile",
+  },
+  {
+    "color": 3,
+    "eyeGap": 10.5,
+    "eyes": "dots",
+    "look": "jelly",
+    "mouth": "cat",
+  },
+  {
+    "color": 2,
+    "eyeGap": 12.2,
+    "eyes": "happy",
+    "look": "jelly",
+    "mouth": "o",
+  },
+  {
+    "color": 5,
+    "eyeGap": 11.4,
+    "eyes": "dots",
+    "look": "jelly",
+    "mouth": "o",
+  },
+]
+`;
+
+exports[`determinism > trait set v1 is frozen > mochi 1`] = `
+[
+  {
+    "color": 6,
+    "eyeGap": 10.7,
+    "eyes": "happy",
+    "look": "mochi",
+    "mouth": "smile",
+    "top": 30,
+    "width": 38.5,
+  },
+  {
+    "color": 4,
+    "eyeGap": 11,
+    "eyes": "dots",
+    "look": "mochi",
+    "mouth": "cat",
+    "top": 28.4,
+    "width": 35.1,
+  },
+  {
+    "color": 3,
+    "eyeGap": 12.7,
+    "eyes": "happy",
+    "look": "mochi",
+    "mouth": "none",
+    "top": 31.6,
+    "width": 36.4,
+  },
+  {
+    "color": 7,
+    "eyeGap": 11.9,
+    "eyes": "dots",
+    "look": "mochi",
+    "mouth": "none",
+    "top": 30.8,
+    "width": 38.9,
+  },
+]
+`;
+
+exports[`determinism > trait set v1 is frozen > soft 1`] = `
+[
+  {
+    "cheeks": true,
+    "eyes": "ovals",
+    "look": "soft",
+    "mouth": "smile",
+    "palette": 6,
+  },
+  {
+    "cheeks": true,
+    "eyes": "ovals",
+    "look": "soft",
+    "mouth": "smile",
+    "palette": 4,
+  },
+  {
+    "cheeks": true,
+    "eyes": "sleepy",
+    "look": "soft",
+    "mouth": "cat",
+    "palette": 3,
+  },
+  {
+    "cheeks": true,
+    "eyes": "ovals",
+    "look": "soft",
+    "mouth": "open",
+    "palette": 7,
+  },
+]
+`;
+
+exports[`determinism > trait set v1 is frozen 1`] = `5786538881179672`;

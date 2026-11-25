@@ -1,0 +1,8 @@
+{
+	"extends": "../../tsconfig.base.json",
+	"compilerOptions": {
+		// The React wrapper imports the package by name; resolve it to source so typecheck needs no build.
+		"paths": { "blinky-avatar": ["./src/index.ts"] }
+	},
+	"include": ["src"]
+}
