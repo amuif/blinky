@@ -31,3 +31,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          # setup-node points pnpm at its own .npmrc, which reads this variable.
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
