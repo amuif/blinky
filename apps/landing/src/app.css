@@ -381,7 +381,7 @@ svg[viewBox="0 0 24 24"] {
 }
 .looks {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(min(140px, 40%), 1fr));
 	gap: 16px;
 }
 .looks .card {
@@ -926,6 +926,64 @@ footer .foot {
 .name-samples {
 	padding-top: 24px;
 	border-top: 1px solid var(--line);
+}
+
+/* Tablets: six looks as two even rows */
+@media (max-width: 900px) {
+	.looks {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}
+
+/* Phones */
+@media (max-width: 640px) {
+	.looks {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+	.wrap,
+	.cta-wrap {
+		padding-inline: 16px;
+	}
+	.block {
+		padding-block: 48px;
+	}
+	.topbar {
+		padding: 6px 14px 6px 12px;
+	}
+	.nav {
+		flex-wrap: nowrap;
+		gap: 14px;
+	}
+	.brand {
+		font-size: 14px;
+	}
+	.menu ul {
+		flex-wrap: nowrap;
+		gap: 0 12px;
+	}
+	.menu [data-slot="navigation-menu-link"] {
+		font-size: 12px;
+	}
+	.menu .divider,
+	.gh-label {
+		display: none;
+	}
+	.name-looks,
+	.name-samples {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+	.name-samples {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
+	.cta {
+		padding: 32px 20px;
+		border-radius: 24px;
+	}
+	.foot {
+		flex-direction: column;
+		align-items: flex-start;
+	}
 }
 
 /* Motion (wrappers around <blinky-avatar>; the element blinks itself) */
